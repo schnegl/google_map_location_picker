@@ -31,6 +31,8 @@ class LocationPicker extends StatefulWidget {
     this.automaticallyAnimateToCurrentLocation,
     this.mapStylePath,
     this.appBarColor,
+    this.pinColor,
+    this.initMapType,
     this.searchBarBoxDecoration,
     this.hintText,
     this.resultCardConfirmIcon,
@@ -56,6 +58,10 @@ class LocationPicker extends StatefulWidget {
   final String mapStylePath;
 
   final Color appBarColor;
+  final Color pinColor;
+
+  final MapType initMapType;
+
   final BoxDecoration searchBarBoxDecoration;
   final String hintText;
   final Widget resultCardConfirmIcon;
@@ -416,6 +422,8 @@ class LocationPickerState extends State<LocationPicker> {
                 widget.automaticallyAnimateToCurrentLocation,
             mapStylePath: widget.mapStylePath,
             appBarColor: widget.appBarColor,
+            pinColor: widget.pinColor,
+            initMapType: widget.initMapType,
             searchBarBoxDecoration: widget.searchBarBoxDecoration,
             hintText: widget.hintText,
             resultCardConfirmIcon: widget.resultCardConfirmIcon,
@@ -454,6 +462,8 @@ Future<LocationResult> showLocationPicker(
   bool automaticallyAnimateToCurrentLocation = true,
   String mapStylePath,
   Color appBarColor = Colors.transparent,
+  Color pinColor = Colors.black,
+  MapType initMapType = MapType.satellite,
   BoxDecoration searchBarBoxDecoration,
   String hintText,
   Widget resultCardConfirmIcon,
@@ -478,6 +488,8 @@ Future<LocationResult> showLocationPicker(
               automaticallyAnimateToCurrentLocation,
           mapStylePath: mapStylePath,
           appBarColor: appBarColor,
+          pinColor: pinColor,
+          initMapType, initMapType,
           hintText: hintText,
           searchBarBoxDecoration: searchBarBoxDecoration,
           resultCardConfirmIcon: resultCardConfirmIcon,

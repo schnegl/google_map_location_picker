@@ -30,6 +30,8 @@ class MapPicker extends StatefulWidget {
     this.automaticallyAnimateToCurrentLocation,
     this.mapStylePath,
     this.appBarColor,
+    this.pinColor,
+    this.initMapType,
     this.searchBarBoxDecoration,
     this.hintText,
     this.resultCardConfirmIcon,
@@ -53,6 +55,10 @@ class MapPicker extends StatefulWidget {
   final String mapStylePath;
 
   final Color appBarColor;
+  final Color pinColor;
+
+  final MapType initMapType;
+
   final BoxDecoration searchBarBoxDecoration;
   final String hintText;
   final Widget resultCardConfirmIcon;
@@ -71,7 +77,7 @@ class MapPicker extends StatefulWidget {
 class MapPickerState extends State<MapPicker> {
   Completer<GoogleMapController> mapController = Completer();
 
-  MapType _currentMapType = MapType.normal;
+  MapType _currentMapType = widget.initMapType;
 
   String _mapStyle;
 
@@ -297,7 +303,7 @@ class MapPickerState extends State<MapPicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(Icons.place, size: 56),
+            Icon(Icons.place, size: 56, color: widget.pinColor),
             Container(
               decoration: ShapeDecoration(
                 shadows: [
