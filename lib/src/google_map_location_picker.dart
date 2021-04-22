@@ -476,7 +476,6 @@ Future<LocationResult> showLocationPicker(
   final results = await Navigator.of(context).push(
     MaterialPageRoute<dynamic>(
       builder: (BuildContext context) {
-        // print('[LocationPicker] [countries] ${countries.join(', ')}');
         return LocationPicker(
           apiKey,
           initialCenter: initialCenter,
@@ -489,7 +488,7 @@ Future<LocationResult> showLocationPicker(
           mapStylePath: mapStylePath,
           appBarColor: appBarColor,
           pinColor: pinColor,
-          initMapType, initMapType,
+          initMapType: initMapType,
           hintText: hintText,
           searchBarBoxDecoration: searchBarBoxDecoration,
           resultCardConfirmIcon: resultCardConfirmIcon,

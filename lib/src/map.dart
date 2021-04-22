@@ -77,7 +77,7 @@ class MapPicker extends StatefulWidget {
 class MapPickerState extends State<MapPicker> {
   Completer<GoogleMapController> mapController = Completer();
 
-  MapType _currentMapType = widget.initMapType;
+  MapType _currentMapType;
 
   String _mapStyle;
 
@@ -130,6 +130,9 @@ class MapPickerState extends State<MapPicker> {
   @override
   void initState() {
     super.initState();
+
+    _currentMapType = widget.initMapType;
+
     if (widget.automaticallyAnimateToCurrentLocation && !widget.requiredGPS)
       _initCurrentLocation();
 
